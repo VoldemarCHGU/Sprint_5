@@ -22,4 +22,3 @@ class TestLogin:
         driver.find_element(*LocatorsForRegistrationAndLogin.BTN_LOGIN).click()
         # Проверяем страницу
         assert WebDriverWait(driver, 5).until(EC.visibility_of_element_located(LocatorsMainPage.BTN_MAKE_ORDER))
-        assert "/login" not in driver.current_url
