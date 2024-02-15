@@ -1,11 +1,14 @@
 from selenium.webdriver.common.by import By
 
+from data import UserData
 
-class LocatorsForRegistrationAndAndLogin:
+
+class LocatorsForRegistrationAndLogin:
     INPUT_NAME = By.XPATH, "//input[@name='name']"  # поле вводи имени
     INPUT_EMAIL = By.XPATH, "//*[@id='root']//label[text()='Email']/following-sibling::input"  # Поле ввода email
     INPUT_PASSWORD = By.XPATH, "//*[@id='root']//label[text()='Пароль']/following-sibling::input"  # поле ввода пароля
     BTN_REGISTER = By.XPATH, "//button[contains(text(),'Зарегистрироваться')]"  # Кнопка "Зарегистрироваться"
+    LINK_REGISTER = By.XPATH, "//a[contains(text(),'Зарегистрироваться')]"  # ссылка на страницу регистрации
     BTN_LOGIN = By.XPATH, "//button[contains(text(),'Войти')]"  # Кнопка "Войти"
     LABEL_INCORRECT_PASS = By.XPATH, "//div[contains(@class,'password')]/following-sibling::p[contains(text(), 'Некорректный пароль')]"
     BTN_LOGIN_IN_REG_PAGE = By.XPATH, "//a[contains(text(),'Войти')]"
@@ -28,6 +31,8 @@ class LocatorsPersonalAccounts:
     BTN_PROFILE = By.XPATH, "//a[contains(text(),'Профиль')]"
     BTN_ORDERS = By.XPATH, "//a[contains(text(),'История заказов')]"
     BTN_CANCEL = By.XPATH, "//button[contains(text(),'Отмена')]"
+    USER_NAME = By.XPATH, f"//input[@value='{UserData.NAME}']"
+    USER_LOGIN = By.XPATH, f"//input[@value='{UserData.EMAIL}']"
 
 
 class LocatorsConstructor:
