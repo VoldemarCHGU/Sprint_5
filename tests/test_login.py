@@ -1,5 +1,7 @@
-from conftest import *
+import pytest
 from locators import *
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
 
 
 class TestLogin:
@@ -19,5 +21,5 @@ class TestLogin:
         driver.find_element(*LocatorsForRegistrationAndLogin.INPUT_PASSWORD).send_keys(UserData.PASSWORD)
         driver.find_element(*LocatorsForRegistrationAndLogin.BTN_LOGIN).click()
         # Проверяем страницу
-        WebDriverWait(driver, 5).until(EC.visibility_of_element_located(LocatorsMainPage.BTN_MAKE_ORDER))
+        assert WebDriverWait(driver, 5).until(EC.visibility_of_element_located(LocatorsMainPage.BTN_MAKE_ORDER))
         assert "/login" not in driver.current_url

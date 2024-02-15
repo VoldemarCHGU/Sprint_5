@@ -1,5 +1,6 @@
-from conftest import *
-from data import UserData
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
+from locators import *
 
 
 class TestPersonalAccount:
@@ -14,6 +15,6 @@ class TestPersonalAccount:
         assert "/account/profile" in driver.current_url
 
         # Проверяем соответствие имени в профиле
-        WebDriverWait(driver, 5).until(EC.visibility_of_element_located(LocatorsPersonalAccounts.USER_NAME))
+        assert WebDriverWait(driver, 5).until(EC.visibility_of_element_located(LocatorsPersonalAccounts.USER_NAME))
         # Проверяем соответствие логина в профиле
-        WebDriverWait(driver, 5).until(EC.visibility_of_element_located(LocatorsPersonalAccounts.USER_LOGIN))
+        assert WebDriverWait(driver, 5).until(EC.visibility_of_element_located(LocatorsPersonalAccounts.USER_LOGIN))

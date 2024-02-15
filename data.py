@@ -2,10 +2,6 @@ import random
 import string
 
 
-class Main:
-    URL = "https://stellarburgers.nomoreparties.site/"
-
-
 class UserData:
     # Для авторизации
     NAME = "Vladimir"
